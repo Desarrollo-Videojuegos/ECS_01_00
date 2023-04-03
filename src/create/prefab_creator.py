@@ -13,5 +13,6 @@ def crear_cuadrado(ecs_world: esper.World, pos: pygame.Vector2, enemy: dict):
         ecs_world.add_component(cuad_entity, CVelocity(pygame.Vector2(enemy['velocity_max'],enemy['velocity_min'])))
 
 def crear_enemy_spawner(ecs_world: esper.World, level: dict):
+        spawner = CEnemySpawner(level['enemy_spawn_events'])
         enemy_spawner_entity = ecs_world.create_entity()
-        ecs_world.add_component(enemy_spawner_entity, CEnemySpawner(level['enemy_spawn_events']))
+        ecs_world.add_component(enemy_spawner_entity, spawner)
