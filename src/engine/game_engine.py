@@ -50,7 +50,7 @@ class GameEngine:
         self._clean()
 
     def _create(self):
-        crear_enemy_spawner(self.ecs_world, self.level)
+        crear_spawner(self.ecs_world, self.level)
         ##crear_cuadrado(self.ecs_world)
 
     def _calculate_time(self):
