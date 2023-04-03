@@ -16,7 +16,7 @@ class GameEngine:
     
 
     def __init__(self) -> None:
-        self._load_json()
+        self._cargar_archivos()
         pygame.init()
         pygame.display.set_caption(self.window['title'])
         self.framerate = self.window['framerate']
@@ -31,13 +31,13 @@ class GameEngine:
 
         self.ecs_world = esper.World()
     
-    def _load_json(self):
+    def _cargar_archivos(self):
         with open('assets/cfg/window.json') as win:
             self.window = json.load(win)
-        with open('assets/cfg/enemies.json') as ene:
-            self.enemies = json.load(ene)
         with open('assets/cfg/level_01.json') as lev:
             self.level = json.load(lev)
+        with open('assets/cfg/enemies.json') as ene:
+            self.enemies = json.load(ene)
 
     def run(self) -> None:
         self._create()
