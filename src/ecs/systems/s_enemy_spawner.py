@@ -13,5 +13,6 @@ def system_enemy_spawner(world: esper.World, enemies:dict, delta_time: float):
         m_e:SpawnEventData
         print(c_e[0].spawn)
         for event, (m_e) in enumerate(c_e[0].spawn):
-            if c_e[0].time >= m_e.time:
+            if c_e[0].time >= m_e.time and m_e.created == False:
+                m_e.created = True
                 crear_cuadrado(world, m_e.position, enemies[m_e.type])
