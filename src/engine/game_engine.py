@@ -1,7 +1,7 @@
 import pygame
 import json
 import esper
-from src.create.prefab_creator import crear_cuadrado, crear_enemy_spawner
+from src.create.prefab_creator import crear_cuadrado, crear_enemy_spawner, crear_spawner
 from src.ecs.components.c_surface import CSurface
 from src.ecs.components.c_transform import CTransform
 from src.ecs.components.c_velocity import CVelocity
